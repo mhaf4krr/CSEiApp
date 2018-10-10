@@ -20,8 +20,9 @@ module.exports = function(app,urlencodedParser) {
 
      app.get('/edit',function(req,res){
         console.log(req.query.uid);
+        console.log(req.query);
         let index = findUserIndex(req.query.uid);
-        res.render('edit',{user:userList[index]});
+        res.render('edit',{user:userList[index],userRole:req.query.userRole,message:''});
     });
 
     app.post('/edit',urlencodedParser,(req,res)=>{
@@ -181,6 +182,39 @@ module.exports = function(app,urlencodedParser) {
     })
 
 
+
+    //download Local Data
+
+    app.get('/AdminData', function (req, res) {
+ 
+        res.download('./locale/data.txt', function (err) {
+            
+            console.log(err);})});
+     
+       //===================================================  USER DELETION +++++++++++++++++?++++++++++++++++++++++++++++>
+
+       app.get('/deleteUser',(req,res)=>{
+            console.log(req.query);
+            let index =  userList.findIndex( function(user){
+                return req.query.user === user.uid }) 
+            
+
+            if(req.query.userRole === 'admin') {
+            
+         
+
+            console.log(`deleted user :${userList[index].uid} , name: ${userList[index].fullName}`);
+            userList.splice(index,1);
+            localController.UpdateLocalData((userList));
+            res.render('edit',{user:'',userRole:'admin',message:'USER HAS BEEN REMOVED'});
+
+
+        }
+
+
+           else { res.render('edit',{user:userList[index],userRole:req.query.userRole,message:'You are NOT AUTHORIZED !'});
+
+         }})
 
 
     app.get('/viewSubmitted',(req,res)=>{

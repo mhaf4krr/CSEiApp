@@ -25,7 +25,7 @@ displayUsers = () =>{
     renderedList.forEach((user)=>{
         let section = document.createElement('section');
        section.setAttribute('class','align-center w3-pale-blue w3-topbar w3-bottombar w3-border-black');
-        section.innerHTML =`<a href="/edit?uid=${user.uid}"><div class="align-center w3-padding-16">
+        section.innerHTML =`<a href="/edit?uid=${user.uid}&userRole=${userRole}"><div class="align-center w3-padding-16">
         <img src="http://iustlive.com/Index/examination/GetImageByRegNo.aspx?RegNo=${user.uid}" height="120px">
         <p>Name: <b>${user.fullName}</b></p>
         <p>RollNo.: <b>${user.rollNo}</b></p>
@@ -95,6 +95,8 @@ document.querySelector('#sort-option').addEventListener('click',()=>{
 if(userRole === 'admin')
 {
     renderedList = userList;
+
+    document.querySelector('#admin-on').innerHTML=`<a class='w3-btn w3-grey' href="/AdminData"> Data export from Server </a>`
 
     displayUsers();
     
@@ -207,7 +209,7 @@ document.querySelector('#sort-aoi').addEventListener('click',(event)=>{
    else if(value == 'Web Development'){
         console.log('heard');
         sortUsers('Web Development');
-        console.log(renderedList);
+        countUsers(renderedList,'Web Development')
         displayUsers();
     }
 
@@ -215,17 +217,20 @@ document.querySelector('#sort-aoi').addEventListener('click',(event)=>{
         console.log('heard');
         sortUsers('Machine Learning');
         console.log(renderedList);
+        countUsers(renderedList,'Machine Learning')
         displayUsers();
     }
     else if(value == 'Internet Of Things'){
         console.log('heard');
         sortUsers('Internet Of Things');
+        countUsers(renderedList,'Internet Of Things')
         console.log(renderedList);
         displayUsers();
     }
     else if(value == 'Android/Swift'){
-        console.log('heard');
+        console.log('heard ANDROID');
         sortUsers('Android/Swift');
+        countUsers(renderedList,'Android/Swift')
         console.log(renderedList);
         displayUsers();
     }
@@ -235,3 +240,19 @@ document.querySelector('#sort-aoi').addEventListener('click',(event)=>{
 })
 
 
+function countUsers(list,aoi) {
+    let i=0;
+    let accepted=0;
+    let rejected=0;
+    let underprocess = 0;
+
+    list.forEach((user)=>{
+        if(user.state ==='Rejected')
+        rejected++;
+        if(user.state ==='Accepted')
+        accepted++;
+        else underprocess++
+    })
+
+    document.querySelector('#current-roll').innerHTML=`<h2>${aoi}</h2><p>Total Registrations : ${accepted+rejected+underprocess} <br> Accepted : ${accepted} <br> Rejected : ${rejected} <br> Under Process : ${underprocess}  <p>`;
+}

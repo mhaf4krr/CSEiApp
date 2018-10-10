@@ -13,7 +13,9 @@
         <div class="w3-container w3-center">
         
         <div class="w3-panel w3-pale-yellow w3-leftbar w3-border-yellow">
-        <p class='w3-pale-yellow'>User Mutation. Please proceed with CAUTION</p>
+        <p class='w3-pale-yellow'><b>Editing as  Incharge : <%=userRole%> </b> </p><br>
+        <p class='w3-pale-yellow'><b> <%=message%> </b> </p>
+        
         </div>
         
             <form action="/edit" method="POST">
@@ -21,27 +23,27 @@
         
                 <img src=http://iustlive.com/Index/examination/GetImageByRegNo.aspx?RegNo=<%=user.uid %> alt="user-image" width='150px' height='160px'><br><br>
                
-                <input type="text" name ="uid"value='<%=user.uid %>' readonly><br><br>
+                UID: <input type="text" name ="uid"value='<%=user.uid %>' readonly><br><br>
 
-                <input type="text" name ="fullName"value='<%=user.fullName %>' readonly><br><br>
+                NAME: <input type="text" name ="fullName"value='<%=user.fullName %>' readonly><br><br>
                
-                <input type="number" id='phone' name='phone' value='<%=user.phone %>' ><br><br>
+                PHONE: <input type="number" id='phone' name='phone' value='<%=user.phone %>' ><br><br>
                 
                 <input type="text" id='email' name='email' value='<%=user.email %>' ><br><br>
 
-                <input type="text" id='cgpa' name='cgpa' value='<%=user.cgpa %>' ><br><br>
+                CGPA:<input type="text" id='cgpa' name='cgpa' value='<%=user.cgpa %>' ><br><br>
 
-                <input type="text" id='rollNo' name='rollNo' value='<%=user.rollNo %>' placeholder="Roll No. Missing "><br><br>
+                ROLL NO. : CSE-16-<input type="text" id='rollNo' name='rollNo' value='<%=user.rollNo %>' placeholder="Roll No. Missing "><br><br>
                
-                Current:<input type="text" id='aoi' value='<%=user.aoi %>' readonly><br><br><br>
+                CURRENT:<input type="text" id='aoi' value='<%=user.aoi %>' readonly><br><br><br>
 
-                New: <select name="aoi" id="">
+                NEW UPDATE: <select name="aoi" id="">
                     <option value="Web Development">Web Development</option>
                     <option value="Machine Learning">Machine Learning</option>
                     <option value="Internet Of Things">Internet Of Things</option>
                     <option value="Android/Swift">Android or Swift</option>
                 </select><br><br>
-                <label for="cor">Current : Choice of Region:</label>
+                <label for="cor">COR : </label>
                 <input type="text" name= "cor" id='cor' value='<%=user.cor %>' readonly><br><br>
                 <input type="text" id='company' name='companyAssigned' value='<%=user.companyAssigned %>' placeholder="Company to Assign"><br><br>
                 <select name="state" id="">
@@ -49,14 +51,14 @@
                     <option value="underProcess">Under Process</option>
                     <option value="Rejected">Reject Application</option>
                 </select>
-                <input type="submit" value="Update User Details" class="w3-button w3-green"> 
+                <input type="submit" value="Update User Details" class="w3-button w3-green"> <a href="/deleteUser?user=<%=user.uid%>&userRole=<%=userRole%>" id='admin-on' class='w3-btn w3-red'>Delete User</a>
                <br><br>
-
+              
                
             </form>
             <br><br>
             </div>
-        
+            
             </div>
 </body>
 </html>
