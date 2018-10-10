@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>C-Panel</title>
+
+
+<link rel="stylesheet" href='/assets/style.css'>
+<link rel="stylesheet" href='/assets/theme.css'>
+
+<style>
+    .align-center {
+        text-align: center;
+        margin:2% auto;
+    }
+</style>
+
+</head>
+
+<body>
+    <header class='w3-container w3-black align-center' >
+        <div class='w3-teal align-center'>
+            <p>Logged in as <b><%= user.name %></b></p>
+        </div>
+
+        <h4>
+            Control Pannel: <%= user.role %>
+        </h4>
+    </header>
+
+    <div class='w3-pale-yellow align-center' >
+        <div class="w3-card align-center">
+            <input type="text" class='w3-input w3-border w3-round-large' id='searchText' placeholder='Registration Number'> <br> 
+            <button class='w3-btn w3-orange' id='searchBtn'>Search For User</button><br><br>
+        </div><br>
+
+        <div class='control align-center'>
+            <h4 class='w3-red'>Sorting Menu</h4>
+            <select id="sort-option">
+                <option value="cgpa">CGPA</option>
+                <option value="Accepted">state:ACCEPTED</option>
+                <option value="Rejected">state:REJECTED</option>
+                <option value="underProcess">state:UNDER PROCESS</option>
+            </select>
+            <br> <br>
+            <select id="sort-aoi">
+            <option value="get-count">Get Present Count</option>
+                <option value="Internet Of Things">IoT</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Android/Swift'">Android / Swift</option>
+                <option value="Machine Learning">Machine Learning</option>
+            </select>
+        </div>
+
+        <br>
+        <div class='w3=black' id='total-enroll'></div>
+        <br>
+
+        <div class='w3-card w3-grey'>
+        
+        <section id='Search-Results' class='align-center'>
+
+        </section>
+
+        </div>
+    </div>
+    <input type="text" id='userRole' value='<%= user.role %>' hidden>
+    <input type="text" id='userList' value='<%= userlist %>' hidden>
+    <script src="../scripts/cpanel.js"></script>
+</body>
+</html>

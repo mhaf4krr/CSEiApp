@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> CSE Home</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/theme.css">
+</head>
+<body class="w3-theme-l3">
+
+<style>
+.align-center {
+    text-align:center;
+    margin:auto;
+}
+
+#holder-div{
+    padding:5% 0;
+}
+
+
+</style>
+    <header>
+
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-theme-l2" style="display:none" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large w3-theme-d3"
+  onclick="w3_close()">CLOSE &times;</button>
+  <a href="/form" class="w3-bar-item w3-button w3-orange ">Registration</a>
+  <a href="/login" class="w3-bar-item w3-button w3-red">CRC Login</a>
+  <a href="#contact-us" class="w3-bar-item w3-button w3-green">Contact</a>
+</div>
+</header>
+
+
+
+<div id="main">
+
+<div class="w3-blue">
+  <button id="openNav" class="w3-button w3- w3-xlarge" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container w3-theme  align-center">
+                    <h2>Career & Recruitment Cell</h2>
+                    <h3>D.O.C.E. ,IUST</h3>
+
+                </div>
+</div>
+<br><br>
+<div class="w3-panel w3-pale-yellow w3-leftbar w3-border-orange">
+        <p>To Register for Internships and Trainings , please click on Registration. To check the status of your application use check status.</p>
+      </div>
+<br>
+
+<div class='w3-theme-l1 align-center' id='holder-div'>
+        <button class="w3-button w3-orange text-align" onclick='location.replace("/form")'>Registration</button>
+        <button class="w3-button w3-green text-align" onclick='location.replace("/status")'>Check Status</button>
+        <br>
+</div>
+</div>
+<% include partials/footer.ejs%>
+<script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+        </script>
+</body>
+</html>

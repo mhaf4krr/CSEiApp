@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="" href="/assets/style.css">
+    <title>Success</title>
+</head>
+<body>
+<div class="w3-panel w3-green">
+  <p>Registration Successful!<p></div>
+  <div id='show-details' class='w3-card-4 w3-pale-green'>
+  <br>
+  <p>Dear <b> <%=user.fullName %></b>. You have successfully registered for your Trainings/Intership for the Academic Session of 2018. Please note that you have selected <b><%= user.aoi%></b> as your preference . You have added <b> <%=user.phone %></b> as your phone number, <b> <%=user.email %> </b> as your email . We hope you will have a great experience.</p>
+  <br> 
+  </div>
+  <% include partials/footer.ejs%>
+    </body>
+</html>

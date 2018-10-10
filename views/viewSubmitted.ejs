@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Submitted Application</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<div id='show-details' class='w3-card-4 w3-black'>
+
+<div class="w3-container w3-center">
+
+<div class="w3-panel w3-pale-yellow w3-leftbar w3-border-yellow">
+<p>Details have been registered as following</p>
+</div>
+
+    <form action="/success" method="POST">
+ 
+
+        <img src='http://iustlive.com/Index/examination/GetImageByRegNo.aspx?RegNo=<%=user.uid %>' alt="user-image" width='150px' height='160px'><br><br>
+       
+        <input type="text" value='<%=user.fullName %>' readonly><br><br>
+       
+        <input type="number" id='phone' value='<%=user.phone %>' readonly><br><br>
+        
+        <input type="text" id='email' value='<%=user.email %>' readonly><br><br>
+       
+        <input type="text" id='aoi' value='<%=user.aoi %>' readonly><br><br>
+
+        <input type="text" id='rollNo' value='CSE-16-<%=user.rollNo %>' readonly><br><br>
+        
+        <input type="text" id='cgpa' value='CGPA : <%=user.cgpa %>' readonly><br><br>
+
+        <input type="text" id='companyAssigned' value='Assigned : <%=user.companyAssigned %>' readonly><br><br>
+        
+       <br><br>
+    </form>
+    <br><br>
+    </div>
+
+    </div>
+</body>
+</html>

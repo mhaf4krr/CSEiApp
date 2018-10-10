@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<style>
+.align-center{
+    text-align: center;
+    margin: auto;
+    padding: 3% 0;
+}
+body{
+    background: black;
+}
+#header{
+    padding: 4% 0;
+}
+</style>
+<body>
+
+    <div class='w3-black align-center'>
+
+        <div class='w3-orange' id='header'>CRC LOGIN AREA</div>
+        <br><br>
+    
+    <form action="/login" method="POST">
+    <input type="text" name="username" required class='w3-input' placeholder="username">
+    <br>
+    <input type="password" name="password" required class='w3-input'required placeholder="password">
+    <br>
+    <label for="role">Incharge :</label>
+    <select name="role" id="">
+        <option value="iot">IoT</option>
+        <option value="ml">Machine Learning</option>
+        <option value="android-swift">Android/Swift</option>
+        <option value="developer">Administrator</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Login" class='w3-btn w3-red'>
+    </form>
+    <br>
+    <div class='w3-<%=data.color%>'><%=data.message%></div>
+    <br>
+    </div>
+</body>
+</html>

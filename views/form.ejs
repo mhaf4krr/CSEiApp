@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSE 5th SEM</title>
+
+    <link rel="stylesheet" href='/assets/style.css'>
+
+    
+</head>
+<body>
+    <div id=reg-form class='w3-card-4 w3-black'>
+    
+    <div class='w3-container w3-center'>
+            <div class="w3-panel w3-pale-red w3-leftbar w3-border-red">
+                    <p>Please Fill details carefully</p>
+                  </div>
+    <form action="/DisplaySubmission" id='form-main' method="POST" >
+        <input type="text" name='uid' id='uid' placeholder="Registration Number" required><br><br>
+        <input type='text' name='fullName' placeholder="Full Name" required><br><br>
+        <input type="number" name='phone' placeholder="Phone Number" required><br><br>
+        <input type="email" name='email' placeholder="Email ID" required><br><br>
+        <input type="number" name='rollNo' placeholder="Class Roll Number" required><br><br>
+        <input type="text" name='cgpa' placeholder="Average CGPA" required><br><br>
+        <label for="aoi">Area of Interest:</label>
+        <select name="aoi" id="">
+            <option value="Web Development">Web Development</option>
+            <option value="Machine Learning">Machine Learning</option>
+            <option value="Internet Of Things">Internet Of Things</option>
+            <option value="Android/Swift">Android or Swift</option>
+        </select><br><br>
+        <label for="cor">Choice of Region:</label>
+        <select name="cor" id="">
+            <option value="Strictly in Kashmir">Strictly in Kashmir</option>
+            <option value="Strictly outside Kashmir">Strictly outside Kashmir</option>
+            <option value="Does not Matter">Does not Matter</option>
+        </select><br><br>
+        <input type="text" name='state' value='underProcess' hidden><br>
+        <input type="submit" value="Register" class='w3-button w3-deep-orange w3-padding-large'>
+        <br><br>
+    </form>
+    <% include partials/footer.ejs%>
+    </div>
+    </div>
+    
+</body>
+</html>

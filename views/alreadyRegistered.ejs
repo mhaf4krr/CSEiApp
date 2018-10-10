@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Already Registered</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    
+</head>
+<body>
+        <div class="w3-panel w3-pale-red w3-leftbar w3-border-red">
+                <p>Sorry , but you have already Registered once. This request cannot be accepted. If you are willing to change your preferences , conatct CRC Team Member. If you want to know current preferences click the button below 
+                </p>
+
+            <br>
+            <input type="text" value='<%=uid%>' hidden id='get-uid'>
+            <button class="w3-btn w3-round-xlarge w3-red" id='get-application'>Show Application</button>
+            <br><br>
+            <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-round-xlarge w3-black">CRC TEAM</button>
+            <br><br>
+                </div>
+
+
+                <div id="id01" class="w3-modal">
+                <div class="w3-modal-content w3-card-4">
+                  <header class="w3-container w3-teal"> 
+                    <span onclick="document.getElementById('id01').style.display='none'" 
+                    class="w3-button w3-display-topright">&times;</span>
+                    <h4>Contact Information</h4>
+                  </header>
+                  <div class="w3-container">
+                    <p>Benazir - IOT CSE 5th SEM (A)</p>
+                    <p>Hyder - WEB CSE 5th SEM (A)</p>
+                    <p>Shayaan - Android CSE 5th SEM (B)</p>
+                    <p>Mehvish - M.L CSE 5th SEM (B)</p>
+                  </div>
+                  <footer class="w3-container w3-teal">
+                    <h3>CRC CSE</h3>
+                  </footer>
+                </div>
+              </div>
+            </div>
+
+                <script src='/scripts/fetchFormAlreadyRegistered.js'>
+
+    </script>
+</body>
+</html>
