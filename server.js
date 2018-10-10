@@ -2,7 +2,7 @@ const express = require('express');
 
 const app = express();
 
-
+let port = process.env.PORT || 3000;
 
 const bodyParser = require('body-parser');
 
@@ -18,4 +18,4 @@ app.use('/scripts',express.static('scripts'));
 
 appController(app,urlencodedParser);
 
-app.listen(3000);
+app.listen(port); 
