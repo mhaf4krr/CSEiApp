@@ -248,11 +248,58 @@ function countUsers(list,aoi) {
 
     list.forEach((user)=>{
         if(user.state ==='Rejected')
-        rejected++;
+        {rejected++;}
         if(user.state ==='Accepted')
-        accepted++;
+        {accepted++;}
         else underprocess++
     })
 
     document.querySelector('#current-roll').innerHTML=`<h2>${aoi}</h2><p>Total Registrations : ${accepted+rejected+underprocess} <br> Accepted : ${accepted} <br> Rejected : ${rejected} <br> Under Process : ${underprocess}  <p>`;
 }
+
+document.querySelector('#print-list').addEventListener('click',(e)=>{
+    let table = `<table border=1>
+    <thead>
+        <tr>
+            <th>SNO.</th>
+            <th>ROLL NO</th>
+            <th>NAME</th>
+            <th>PHONE</th>
+            <th>EMAIL</th>
+            <th>CGPA</th>
+            <th>AREA OF INTEREST</th>
+           
+        </tr>
+    </thead>
+    <tbody>`;
+
+    let i=1;
+    
+    renderedList.forEach((user)=>{
+        table = table + ` <tr>
+        <td>${i}</td>
+        <td>${user.rollNo}</td>
+        <td>${user.fullName}</td>
+        <td>${user.phone}</td>
+        <td>${user.email}</td>
+        <td>${user.cgpa}</td>
+        <td>${user.aoi}</td>
+
+    </tr>`
+
+    i++;
+    })
+
+    table += `</tbody>
+    </table>`;
+
+
+console.log(table)
+
+document.body.innerHTML = `<body>
+${table}
+</body> `;
+
+window.print();
+
+})
